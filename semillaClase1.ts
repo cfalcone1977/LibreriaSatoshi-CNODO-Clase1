@@ -4,8 +4,20 @@ import * as fs from 'fs';
 const seeds: string[] = [
     "seed.bitcoin.sipa.be",
     "dnsseed.bluematt.be",
-    "seed.btc.petertodd.net"
+    "seed.btc.petertodd.net",
+    "seed.bitcoin.sprovoost.nl",
+    "dnsseed.emzy.de",
+    "seed.bitcoin.wiz.biz",
+    "seed.mainnet.achownodes.xyz"
 ];
+try {
+    fs.unlinkSync('dns_seeds.log');
+    console.log('Archivo eliminado con éxito.');
+} catch (error) {
+    console.error('El archivo no existe o no se pudo eliminar:', error);
+}
+
+
 
 const logFile = "dns_seeds.log";
 const timestamp = new Date().toISOString();
